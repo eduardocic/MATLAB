@@ -1,0 +1,83 @@
+function [o] = fnPassivos(o, varargin)
+
+i = varargin{1};
+
+o.Passivos{i}.texto = {'Passivo Total';
+                       'Passivo Circulante';
+                       'Obrigações Sociais e Trabalhistas';
+                       'Fornecedores';
+                       'Obrigações Fiscais';
+                       'Empréstimos e Financiamentos';
+                       'Outras Obrigações';       
+                       'Provisões';
+                       'Passivos sobre Ativos Não-Correntes a Venda e Descontinuados';
+                       'Passivo Não Circulante';
+                       'Empréstimos e Financiamentos';
+                       'Outras Obrigações';
+                       'Tributos Diferidos';
+                       'Provisões';
+                       'Passivo sobre Ativos Não-Correntes a Venda e Descontinuados';
+                       'Lucro e Receitas a Apropriar';
+                       'Patrimônio Líquido Consolidado';       
+                       'Capital Social Realizado';
+                       'Reservas de Capital';
+                       'Reservas de  Reavalização';
+                       'Reservas de Lucros';
+                       'Lucro/Prejuízos Acumulados';
+                       'Ajustes de Avalização Patrimonial';
+                       'Ajustes Acumulados de Conversão';
+                       'Outros Resultados Abrangentes';};
+        
+o.Passivos{i}.numero = {'2';
+                        '2.01';
+                        '2.01.01';
+                        '2.01.02';
+                        '2.01.03';
+                        '2.01.04';
+                        '2.01.05';                
+                        '2.01.06';
+                        '2.01.07';
+                        '2.02';
+                        '2.02.01';
+                        '2.02.02';
+                        '2.02.03';
+                        '2.02.04';
+                        '2.02.05';
+                        '2.02.06';
+                        '2.03';
+                        '2.03.01';
+                        '2.03.02';
+                        '2.03.03';
+                        '2.03.04';
+                        '2.03.05';
+                        '2.03.06';
+                        '2.03.07';
+                        '2.03.08';};
+                   
+                    
+o.Passivos{i}.PassivoTotal                                          = o.Tabela1(25,:);                    
+o.Passivos{i}.PassivoCirculante                                     = o.Tabela1(26,:); 
+o.Passivos{i}.ObrigacoesSociaisETrabalhistas                        = o.Tabela1(27,:); 
+o.Passivos{i}.Fornecedores                                          = o.Tabela1(28,:); 
+o.Passivos{i}.ObrigacoesFiscais                                     = o.Tabela1(29,:); 
+o.Passivos{i}.EmprestimosEFinanciamentos                            = o.Tabela1(30,:); 
+o.Passivos{i}.OutrasObrigacoes1                                     = o.Tabela1(33,:); 
+o.Passivos{i}.Provisoes1                                            = o.Tabela1(34,:); 
+o.Passivos{i}.PassivosSobreAtivosNaoCorrentesAVendaEDescontinuados1 = o.Tabela1(35,:);
+o.Passivos{i}.PassivosNaoCirculantes                                = o.Tabela1(36,:);
+o.Passivos{i}.EmprestimosEFinanciamentos                            = o.Tabela1(37,:);
+o.Passivos{i}.OutrasObrigacoes2                                     = o.Tabela1(39,:);
+o.Passivos{i}.TributosDiferidos                                     = o.Tabela1(40,:);
+o.Passivos{i}.Provisoes2                                            = o.Tabela1(42,:);
+o.Passivos{i}.PassivosSobreAtivosNaoCorrentesAVendaEDescontinuados2 = o.Tabela1(43,:);
+o.Passivos{i}.LucrosEReceitasAApropriar                             = o.Tabela1(44,:);
+o.Passivos{i}.PatrimonioLiquido                                     = o.Tabela1(46,:);
+o.Passivos{i}.CapitalSocialRealizado                                = o.Tabela1(47,:);
+o.Passivos{i}.ReservasDeCapital                                     = o.Tabela1(48,:);
+o.Passivos{i}.ReservasDeReavaliacao                                 = o.Tabela1(49,:);
+o.Passivos{i}.ReservasDeLucros                                      = o.Tabela1(50,:);
+o.Passivos{i}.LucrosPrejuizosAcumulados                             = o.Tabela1(51,:);
+o.Passivos{i}.AjustesDeAvaliacaoPatrimonal                          = o.Tabela1(52,:);
+o.Passivos{i}.AjustesAcumuladosDeConversao                          = o.Tabela1(53,:);
+o.Passivos{i}.OutrosResultadosAbrangentes                           = o.Tabela1(54,:);
+end

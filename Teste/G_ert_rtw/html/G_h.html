@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - G.h</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('G_h_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../G.h" target="rtwreport_document_frame" id="linkToText_plain">G.h</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * File: G.h</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * Code generated for Simulink model 'G'.</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * Model version                  : 1.20</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> * Simulink Coder version         : 8.5 (R2013b) 08-Aug-2013</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * C/C++ source code generated on : Wed Dec 20 15:24:18 2017</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Target selection: ert.tlc</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> * Embedded hardware selection: 32-bit Generic</span>
+</span><span><a class="LN" name="12">   12   </a><span class="CT"> * Code generation objectives: Unspecified</span>
+</span><span><a class="LN" name="13">   13   </a><span class="CT"> * Validation result: Not run</span>
+</span><span><a class="LN" name="14">   14   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><font color="#992211">#</font><span class="PP">ifndef</span> RTW_HEADER_G_h_
+</span><span><a class="LN" name="17">   17   </a><font color="#992211">#</font><span class="PP">define</span> RTW_HEADER_G_h_
+</span><span><a class="LN" name="18">   18   </a><font color="#992211">#</font><span class="PP">ifndef</span> G_COMMON_INCLUDES_
+</span><span><a class="LN" name="19">   19   </a><font color="#992211">#</font> <span class="PP">define</span> G_COMMON_INCLUDES_
+</span><span><a class="LN" name="20">   20   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&lt;stddef.h&gt;</font>
+</span><span><a class="LN" name="21">   21   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&lt;string.h&gt;</font>
+</span><span><a class="LN" name="22">   22   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;rtwtypes.h&quot;</font>
+</span><span><a class="LN" name="23">   23   </a><font color="#992211">#</font><span class="PP">endif</span>                                 <span class="CT">/* G_COMMON_INCLUDES_ */</span>
+</span><span><a class="LN" name="24">   24   </a>
+</span><span><a class="LN" name="25">   25   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;G_types.h&quot;</font>
+</span><span><a class="LN" name="26">   26   </a>
+</span><span><a class="LN" name="27">   27   </a><span class="CT">/* Macros for accessing real-time model data structure */</span>
+</span><span><a class="LN" name="28">   28   </a><font color="#992211">#</font><span class="PP">ifndef</span> rtmGetErrorStatus
+</span><span><a class="LN" name="29">   29   </a><font color="#992211">#</font> <span class="PP">define</span> rtmGetErrorStatus(rtm)        ((rtm)-&gt;errorStatus)
+</span><span><a class="LN" name="30">   30   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="31">   31   </a>
+</span><span><a class="LN" name="32">   32   </a><font color="#992211">#</font><span class="PP">ifndef</span> rtmSetErrorStatus
+</span><span><a class="LN" name="33">   33   </a><font color="#992211">#</font> <span class="PP">define</span> rtmSetErrorStatus(rtm, val)   ((rtm)-&gt;errorStatus = (val))
+</span><span><a class="LN" name="34">   34   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="35">   35   </a>
+</span><span><a class="LN" name="36">   36   </a><span class="CT">/* External inputs (root inport signals with auto storage) */</span>
+</span><span><a class="LN" name="37">   37   </a><span class="KW">typedef</span> <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="38">   38   </a>  <a href="rtwtypes_h.html#type_int32_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_int32_T');" target="rtwreport_document_frame"><font color="#1122aa">int32_T</font></a> u1;                          <span class="CT">/* '&lt;Root&gt;/u1' */</span>
+</span><span><a class="LN" name="39">   39   </a>  <a href="rtwtypes_h.html#type_int32_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_int32_T');" target="rtwreport_document_frame"><font color="#1122aa">int32_T</font></a> u2;                          <span class="CT">/* '&lt;Root&gt;/u2' */</span>
+</span><span><a class="LN" name="40">   40   </a><b>}</b> <a name="type_ExtU_G_T">ExtU_G_T</a>;
+</span><span><a class="LN" name="41">   41   </a>
+</span><span><a class="LN" name="42">   42   </a><span class="CT">/* External outputs (root outports fed by signals with auto storage) */</span>
+</span><span><a class="LN" name="43">   43   </a><span class="KW">typedef</span> <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="44">   44   </a>  <a href="rtwtypes_h.html#type_int32_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_int32_T');" target="rtwreport_document_frame"><font color="#1122aa">int32_T</font></a> y;                           <span class="CT">/* '&lt;Root&gt;/y' */</span>
+</span><span><a class="LN" name="45">   45   </a><b>}</b> <a name="type_ExtY_G_T">ExtY_G_T</a>;
+</span><span><a class="LN" name="46">   46   </a>
+</span><span><a class="LN" name="47">   47   </a><span class="CT">/* Parameters (auto storage) */</span>
+</span><span><a class="LN" name="48">   48   </a><span class="KW">struct</span> P_G_T_ <b>{</b>
+</span><span><a class="LN" name="49">   49   </a>  <a href="rtwtypes_h.html#type_int32_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_int32_T');" target="rtwreport_document_frame"><font color="#1122aa">int32_T</font></a> Gain_Gain;                   <span class="CT">/* Computed Parameter: Gain_Gain</span>
+</span><span><a class="LN" name="50">   50   </a><span class="CT">                                        * Referenced by: '<a href="matlab:coder.internal.code2model('Simulacao:13')" name="code2model"><font color="#117755"><i>&lt;S1&gt;/Gain</i></font></a>'</span>
+</span><span><a class="LN" name="51">   51   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="52">   52   </a><b>}</b>;
+</span><span><a class="LN" name="53">   53   </a>
+</span><span><a class="LN" name="54">   54   </a><span class="CT">/* Real-time Model Data Structure */</span>
+</span><span><a class="LN" name="55">   55   </a><span class="KW">struct</span> tag_RTM_G_T <b>{</b>
+</span><span><a class="LN" name="56">   56   </a>  <span class="DT">const</span> <a href="rtwtypes_h.html#type_char_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_char_T');" target="rtwreport_document_frame"><font color="#1122aa">char_T</font></a> * <span class="DT">volatile</span> errorStatus;
+</span><span><a class="LN" name="57">   57   </a><b>}</b>;
+</span><span><a class="LN" name="58">   58   </a>
+</span><span><a class="LN" name="59">   59   </a><span class="CT">/* Block parameters (auto storage) */</span>
+</span><span><a class="LN" name="60">   60   </a><span class="DT">extern</span> <a href="G_types_h.html#type_P_G_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_P_G_T');" target="rtwreport_document_frame"><font color="#1122aa">P_G_T</font></a> <a href="G_data_c.html#var_G_P" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_G_P');" target="rtwreport_document_frame"><font color="#1122aa">G_P</font></a>;
+</span><span><a class="LN" name="61">   61   </a>
+</span><span><a class="LN" name="62">   62   </a><span class="CT">/* External inputs (root inport signals with auto storage) */</span>
+</span><span><a class="LN" name="63">   63   </a><span class="DT">extern</span> <a href="#type_ExtU_G_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtU_G_T');" target="rtwreport_document_frame"><font color="#1122aa">ExtU_G_T</font></a> <a href="G_c.html#var_G_U" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_G_U');" target="rtwreport_document_frame"><font color="#1122aa">G_U</font></a>;
+</span><span><a class="LN" name="64">   64   </a>
+</span><span><a class="LN" name="65">   65   </a><span class="CT">/* External outputs (root outports fed by signals with auto storage) */</span>
+</span><span><a class="LN" name="66">   66   </a><span class="DT">extern</span> <a href="#type_ExtY_G_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtY_G_T');" target="rtwreport_document_frame"><font color="#1122aa">ExtY_G_T</font></a> <a href="G_c.html#var_G_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_G_Y');" target="rtwreport_document_frame"><font color="#1122aa">G_Y</font></a>;
+</span><span><a class="LN" name="67">   67   </a>
+</span><span><a class="LN" name="68">   68   </a><span class="CT">/* Model entry point functions */</span>
+</span><span><a class="LN" name="69">   69   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="G_c.html#fcn_G_initialize" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_G_initialize');" target="rtwreport_document_frame"><font color="#1122aa">G_initialize</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="70">   70   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="G_c.html#fcn_G_step" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_G_step');" target="rtwreport_document_frame"><font color="#1122aa">G_step</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="71">   71   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="G_c.html#fcn_G_terminate" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_G_terminate');" target="rtwreport_document_frame"><font color="#1122aa">G_terminate</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="72">   72   </a>
+</span><span><a class="LN" name="73">   73   </a><span class="CT">/* Real-time Model object */</span>
+</span><span><a class="LN" name="74">   74   </a><span class="DT">extern</span> <a href="G_types_h.html#type_RT_MODEL_G_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_RT_MODEL_G_T');" target="rtwreport_document_frame"><font color="#1122aa">RT_MODEL_G_T</font></a> *<span class="DT">const</span> <a href="G_c.html#var_G_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_G_M');" target="rtwreport_document_frame"><font color="#1122aa">G_M</font></a>;
+</span><span><a class="LN" name="75">   75   </a>
+</span><span><a class="LN" name="76">   76   </a><span class="CT">/*-</span>
+</span><span><a class="LN" name="77">   77   </a><span class="CT"> * The generated code includes comments that allow you to trace directly</span>
+</span><span><a class="LN" name="78">   78   </a><span class="CT"> * back to the appropriate location in the model.  The basic format</span>
+</span><span><a class="LN" name="79">   79   </a><span class="CT"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span>
+</span><span><a class="LN" name="80">   80   </a><span class="CT"> * assigned by Simulink) and block_name is the name of the block.</span>
+</span><span><a class="LN" name="81">   81   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="82">   82   </a><span class="CT"> * Note that this particular code originates from a subsystem build,</span>
+</span><span><a class="LN" name="83">   83   </a><span class="CT"> * and has its own system numbers different from the parent model.</span>
+</span><span><a class="LN" name="84">   84   </a><span class="CT"> * Refer to the system hierarchy for this subsystem below, and use the</span>
+</span><span><a class="LN" name="85">   85   </a><span class="CT"> * MATLAB hilite_system command to trace the generated code back</span>
+</span><span><a class="LN" name="86">   86   </a><span class="CT"> * to the parent model.  For example,</span>
+</span><span><a class="LN" name="87">   87   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="88">   88   </a><span class="CT"> * hilite_system('Simulacao/G')    - opens subsystem Simulacao/G</span>
+</span><span><a class="LN" name="89">   89   </a><span class="CT"> * hilite_system('Simulacao/G/Kp') - opens and selects block Kp</span>
+</span><span><a class="LN" name="90">   90   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="91">   91   </a><span class="CT"> * Here is the system hierarchy for this model</span>
+</span><span><a class="LN" name="92">   92   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="93">   93   </a><span class="CT"> * '&lt;Root&gt;' : 'Simulacao'</span>
+</span><span><a class="LN" name="94">   94   </a><span class="CT"> * '<a href="matlab:coder.internal.code2model('Simulacao:6')" name="code2model"><font color="#117755"><i>&lt;S1&gt;</i></font></a>'   : 'Simulacao/G'</span>
+</span><span><a class="LN" name="95">   95   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="96">   96   </a><font color="#992211">#</font><span class="PP">endif</span>                                 <span class="CT">/* RTW_HEADER_G_h_ */</span>
+</span><span><a class="LN" name="97">   97   </a>
+</span><span><a class="LN" name="98">   98   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="99">   99   </a><span class="CT"> * File trailer for generated code.</span>
+</span><span><a class="LN" name="100">  100   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="101">  101   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="102">  102   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="103">  103   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

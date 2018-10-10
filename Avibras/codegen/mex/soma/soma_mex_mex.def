@@ -1,0 +1,7 @@
+EXPORTS
+mexFunction
+emlrtMexFcnProperties
+soma
+soma_initialize
+soma_terminate
+soma_atexit

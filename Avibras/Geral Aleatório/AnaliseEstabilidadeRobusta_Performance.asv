@@ -1,0 +1,71 @@
+close all; clear all; clc;
+
+% Análise de estabilidade robusta e performance
+% ---------------------------------------------
+
+% Função de transferência.
+g11 = tf([6], conv([0.9 1],[0.1 1]));
+g12 = tf([-0.05], [0.1 1]);
+g21 = tf([0.07], [0.3 1]);
+g22 = tf([5], conv([1.8 -1],[0.06 1]));
+Gnom = [ g11  g12;
+         g21  g22];
+    
+% Erro nas entradas do sistema.
+W1 = makeweight(0.20, 35, 10);
+W2 = makeweight(0.25, 40, 10);
+
+bodemag(W1, 'b--', W2, 'r--');
+grid;
+legend('W_1', 'W_2');
+
+% Incerteza multiplicativa.
+Delta1 = ultidyn('Delta1',[1 1]);
+Delta2 = ultidyn('Delta2',[1 1]);
+W      = blkdiag(W1,W2);            % Bloco diagonal de incertezas.
+Delta  = blkdiag(Delta1,Delta2);    % Bloco diagonal de erros.
+G      = Gnom*(eye(2) + Delta*W);   % Planta do sistema incerto.
+
+% Controlador para teste -- K.
+k11 = tf(2*[1 1],[1 0]);
+k12 = tf(-1*[1 0],[3 1]);
+k21 = tf(-5*[1 1],[0.8 1]);
+k22 = tf(4*[0.7 1],[1 0]);
+K   = [ k11  k12;
+        k21  k22];
+    
+% Para este controlador, será realizada a análise de estabilidade de malha
+% fechada do sistema.
+looptransfer = loopsens(G,K);
+Ti = looptransfer.Ti;
+[PeakNorm, freq] = norm(W*Ti.Nominal, 'inf')
+
+% Pelo valor encontrado da normal do sistema W*Ti (um valor acima de 1),
+% sabe-se que pelo teorema do ganho pequeno o sistema NÃO é robustamente
+% estável. No entanto, a matriz 'Delta' tem uma estrutura diagonal, o que
+% afeta e muito a robustez do sistema em malha fechada. Essa análise de
+% estabilidade será agora realizada utilizando-se a função 'robuststab' com
+% um argumento de intreda incerto correspondendo à Função sensitividade
+% complementar para a saída.
+To = looptransfer.To;
+omega = logspace(-1,2,200);
+To_g  = ufrd(To, omega);
+opt   = robopt('Display', 'on');
+[stabmarg, destabunc, report, info] = robuststab(To_g,opt)
+
+% OBS1: Pela análise utilizando a função 'robuststab' tem-se que o sistema
+% é estável. Isso confirma o fato de que se negligenciarmos a estrutura da
+% incerteza no nosso sistema, podemos chegar a conclusões pessimistas a
+% respeito da estabilidade do sistema.
+
+
+semilogx(info.MussvBnds(1,1),'r-',info.MussvBnds(1,2), 'b--')
+grid
+title('Robust stability')
+xlabel('Frequency (rad/s)')
+ylabel('mu')
+legend('\mu-upper bound','\mu-lower bound',2)
+
+
+
+% Consideremos agora a análise de estabili
