@@ -1,3 +1,19 @@
+% =========================================================================
+%
+% Descrição:
+% ----------
+%   
+%    Obtenção dos pontos de pico de um sinal. 
+%
+% 
+% Feito por:
+% ----------
+% 
+%   Eduardo H. Santos
+%   06/11/2018
+% =========================================================================
+
+
 clear all; close all; clc;
 
 % Tempo final de simulação e quantidade de amostras.
@@ -11,29 +27,9 @@ for i = 1:max(size(t))
 end
 plot(t,s); grid;
 
-
 % Ordena as amostras em valores em ordem decrescentes. Os seus índices
 % também estão separados.
 [valores, indices] = sort(s, 'descend');
-
-% % =========================================================================
-% % Quantidade de pontos desejados de máximo e os seus picos.
-% quantPicos = 10;
-% 
-% % Seleciona os valores máximos e mínimos.
-% MAX    = valores(1:quantPicos);
-% indMax = indices(1:quantPicos);
-% for i = 1:max(size(indMax))
-%     tMax(i) = t(indMax(i));
-% end
-% 
-% MIN    = valores((end-quantPicos):end);
-% indMin = indices((end-quantPicos):end);
-% for i = 1:max(size(indMin))
-%     tMin(i) = t(indMin(i));
-% end
-% =========================================================================
-
 
 % Busca por janela temporal.
 janela = 10;

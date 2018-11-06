@@ -76,10 +76,6 @@ ylabel('Valor absoluto normalizado da FFT');
 xlabel('Frequênci (Hz)');
 xlim([0 Fs/2]);
 
-
-
-
-
 % Plot do sinal em magnitude (considerando o espectro completo).
 figure;
 plot(F, mag_db); 

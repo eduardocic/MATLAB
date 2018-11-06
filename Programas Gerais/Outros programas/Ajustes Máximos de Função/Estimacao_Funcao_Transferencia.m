@@ -26,7 +26,7 @@ t         = [];
 signal_in = []; 
 MAX       = [];
 sum       = 0;
-
+t_int(1) = 0;
 for i = 1:f_max
     
     if(i == 1)
@@ -41,6 +41,7 @@ for i = 1:f_max
     signal_in = [signal_in s];    
     t         = [t (t_base + sum)];
     sum       = sum + max(t_base);
+    t_int(i+1)  = sum;
 end
 
 % Plota o sinal o qual você deseja utilizar como entrada do seu sistema.
@@ -128,7 +129,13 @@ nzeros = 0;                 % Estimativa de numeros de zeros do sistema.
 
 sys        = tfest(modelo, npolos, nzeros);
 Gestimado  = tf(sys);
-zpk(Gestimado)
+zpk(Gestimado);
 
 figure; 
 bode(G); hold on; bode(Gestimado);
+
+
+% Apenas para ajuste de vetores.
+% ------------------------------
+signal_out = signal_out';
+save('dados','signal_in', 'signal_out', 't', 't_int');
