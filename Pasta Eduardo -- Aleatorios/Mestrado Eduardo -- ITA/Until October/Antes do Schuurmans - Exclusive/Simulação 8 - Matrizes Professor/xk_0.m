@@ -1,1 +1,0 @@
-xk0 = [3; 5];       % Não factível para as condições Iniciais

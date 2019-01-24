@@ -1,0 +1,38 @@
+CC     = "C:\Program Files\MATLAB\R2013b\sys\lcc\bin\lcc.exe"
+LD     = "C:\Program Files\MATLAB\R2013b\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2013b\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2013b\sys\lcc\lib" 
+LIBFLAGS = 
+
+OBJECTS = \
+	"F16_Simulink_Controle_Longitudinal_sfun.obj"\
+	"c2_F16_Simulink_Controle_Longitudinal.obj"\
+	"F16_Simulink_Controle_Longitudinal_sfun_registry.obj"\
+	"lccstub.obj"\
+	"C:\Program Files\MATLAB\R2013b\sys\lcc\mex\lccdef.def"\
+	"C:\Program Files\MATLAB\R2013b\stateflow\c\mex\lib\win32\sfc_mexlcc.lib"\
+	"C:\Program Files\MATLAB\R2013b\stateflow\c\debugger\lib\win32\sfc_debuglcc.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libmx.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libmex.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libmat.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libut.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2013b\extern\lib\win32\lcc\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2013b\lib\win32\libippmwipt.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2013b\sys\lcc\include"  -I"C:\Program Files\MATLAB\R2013b\extern\include"  -I"C:\Program Files\MATLAB\R2013b\simulink\include"  -I"C:\Program Files\MATLAB\R2013b\rtw\c\src"  -I"C:\Program Files\MATLAB\R2013b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2013b\stateflow\c\debugger\include"  -I"C:\Program Files\MATLAB\R2013b\toolbox\stateflow\src\sf_runtime\export\include\sf_runtime" 
+ 
+
+F16_Simulink_Controle_Longitudinal_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o F16_Simulink_Controle_Longitudinal_sfun.mexw32 @F16_Simulink_Controle_Longitudinal_sfun.lmko
+F16_Simulink_Controle_Longitudinal_sfun.obj :	"F16_Simulink_Controle_Longitudinal_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "F16_Simulink_Controle_Longitudinal_sfun.c"
+c2_F16_Simulink_Controle_Longitudinal.obj :	"c2_F16_Simulink_Controle_Longitudinal.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_F16_Simulink_Controle_Longitudinal.c"
+F16_Simulink_Controle_Longitudinal_sfun_registry.obj :	"F16_Simulink_Controle_Longitudinal_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "F16_Simulink_Controle_Longitudinal_sfun_registry.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2013b\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2013b\sys\lcc\mex\lccstub.c"
